@@ -1,0 +1,25 @@
+---
+import { Github, LinkedIn } from "@components/icons";
+
+const year = new Date().getFullYear();
+
+const NAV_LINKS = [
+  { label: "Inicio", href: "#inicio" },
+  { label: "Proyectos", href: "#proyectos" },
+  { label: "Sobre mí", href: "#sobre-mi" },
+  { label: "Contacto", href: "#contacto" },
+];
+---
+
+<footer
+  class="relative mt-24 border-t border-white/10 bg-[radial-gradient(circle_at_top,rgba(0,255,153,0.15),transparent_55%)]"
+>
+  <div class="border-t border-white/5 bg-transparent">
+    <div
+      class="mx-auto flex max-w-6xl flex-col items-center gap-2 px-6 py-6 text-xs text-white/60 md:flex-row md:justify-between"
+    >
+      <p>© {year} Gustavo Trejo Cruz.</p>
+      <p class="flex items-center gap-1 text-white/40 text-center">yft24.</p>
+    </div>
+  </div>
+</footer>

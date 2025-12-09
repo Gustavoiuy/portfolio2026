@@ -1,0 +1,18 @@
+---
+import Title from "@components/ui/Title.astro";
+import ExperienceItem from "./ExperienceItem.astro";
+import experience from "@data/experience.json";
+---
+
+<section id="experiencia" class="scroll-mt-24">
+  <Title>EXPERIENCIA LABORAL</Title>
+  <ol class="relative mt-16">
+    {
+      experience.map((experience) => (
+        <li class="">
+          <ExperienceItem {...experience} />
+        </li>
+      ))
+    }
+  </ol>
+</section>

@@ -1,0 +1,38 @@
+---
+
+---
+
+<h2
+  class="title-animated text-center text-2xl xs:text-4xl sm:text-5xl mt-16 mb-8 opacity-0 -translate-x-5 transition-all duration-700 ease-out"
+>
+  <slot />
+</h2>
+
+<script>
+  const initTitleObserver = () => {
+    const titles = document.querySelectorAll(".title-animated");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.remove("opacity-0", "-translate-x-50");
+            entry.target.classList.add("opacity-100", "translate-x-0");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        root: null,
+        threshold: 0.1,
+        rootMargin: "0px",
+      }
+    );
+
+    titles.forEach((title) => {
+      observer.observe(title);
+    });
+  };
+
+  document.addEventListener("astro:page-load", initTitleObserver);
+</script>

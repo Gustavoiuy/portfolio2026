@@ -1,0 +1,99 @@
+---
+import Title from "@components/ui/Title.astro";
+import { ProjectLogic } from "@components/projects/ProjectLogic";
+---
+
+<section id="proyectos" class="scroll-mt-24">
+  <Title>Proyectos</Title>
+  <ProjectLogic client:only="react" />
+</section>
+
+<script>
+  const initProjectsObserver = () => {
+    const projectCards = document.querySelectorAll(".project-card");
+    if (!projectCards.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("project-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.3,
+      }
+    );
+
+    projectCards.forEach((card) => observer.observe(card));
+  };
+
+  document.addEventListener("astro:page-load", initProjectsObserver);
+
+  const observeProjectsContainer = () => {
+    const container = document.querySelector("#proyectos");
+    if (!container) return;
+
+    const mutationObserver = new MutationObserver(() => {
+      initProjectsObserver();
+    });
+
+    mutationObserver.observe(container, {
+      childList: true,
+      subtree: true,
+    });
+  };
+
+  document.addEventListener("astro:page-load", observeProjectsContainer);
+</script>
+
+<style>
+  :global(.project-card) {
+    opacity: 0;
+    transform: translateY(40px);
+    transition-property: opacity, transform;
+    transition-duration: 600ms;
+    transition-timing-function: ease-out;
+  }
+
+  :global(.project-card:nth-child(1)) {
+    transition-delay: 0ms;
+  }
+
+  :global(.project-card:nth-child(2)) {
+    transition-delay: 200ms;
+  }
+
+  :global(.project-card:nth-child(3)) {
+    transition-delay: 400ms;
+  }
+
+  :global(.project-card:nth-child(4)) {
+    transition-delay: 600ms;
+  }
+
+  :global(.project-card:nth-child(5)) {
+    transition-delay: 800ms;
+  }
+
+  :global(.project-card:nth-child(6)) {
+    transition-delay: 1000ms;
+  }
+
+  :global(.project-card:nth-child(7)) {
+    transition-delay: 1200ms;
+  }
+
+  :global(.project-card:nth-child(8)) {
+    transition-delay: 1400ms;
+  }
+
+  :global(.project-card.project-visible) {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+</style>

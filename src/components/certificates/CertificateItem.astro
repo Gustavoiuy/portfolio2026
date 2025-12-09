@@ -1,0 +1,80 @@
+---
+import { Astroo, React, JavaScript } from "@components/icons";
+interface Props {
+  num: number;
+  title: string;
+  transmitter: string;
+  date: string;
+  link: string;
+  icon: string;
+}
+const { title, transmitter, date, link, icon, num } = Astro.props;
+
+const ICONS = {
+  Astroo: Astroo,
+  React: React,
+  JavaScript: JavaScript,
+};
+const ICON = ICONS[icon as keyof typeof ICONS];
+---
+
+<article
+  class="certificate-item relative flex gap-2 items-center border justify-center p-2 max-w-110 w-full md:max-w-200 lg:p-3 mx-auto md:mx-0 opacity-0 translate-y-8 transition-all duration-700 ease-out"
+  data-index={num - 1}
+>
+  <div
+    class="absolute bottom-2 right-2 bg-black/70 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold shadow-lg"
+  >
+    {num}
+  </div>
+  <div class="p-3">
+    <ICON class="size-15" />
+  </div>
+  <div class="flex flex-col flex-1 justify-between h-full">
+    <h3 class="line-clamp-2 min-h-8">{title}</h3>
+    <p><span class="text-st">Emisor: </span>{transmitter}</p>
+    <p>{date}</p>
+    <a
+      href={link}
+      target="_blank"
+      class="w-fit relative font-medium transition-all duration-300 ease-out hover:text-st before:absolute before:bottom-0 before:left-0 before:w-0 before:h-0.5 before:bg-st before:transition-all before:duration-300 before:ease-out hover:before:w-full"
+    >
+      Ver certificado
+    </a>
+  </div>
+</article>
+<script>
+  const initCertificateObserver = () => {
+    const certificateItems = document.querySelectorAll(".certificate-item");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const element = entry.target as HTMLElement;
+            const index = parseInt(element.dataset.index || "0");
+            const delay = index * 200;
+
+            setTimeout(() => {
+              element.classList.remove("opacity-0", "translate-y-8");
+              element.classList.add("opacity-100", "translate-y-0");
+            }, delay);
+
+            observer.unobserve(element);
+          }
+        });
+      },
+      {
+        root: null,
+        threshold: 0.2,
+        rootMargin: "0px",
+      }
+    );
+
+    certificateItems.forEach((item) => {
+      observer.observe(item);
+    });
+  };
+
+  document.addEventListener("astro:page-load", initCertificateObserver);
+</script>

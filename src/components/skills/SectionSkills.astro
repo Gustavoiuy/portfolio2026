@@ -1,0 +1,145 @@
+---
+import Title from "@components/ui/Title.astro";
+import {
+  Astroo,
+  TailwindCSS,
+  CSS,
+  Figma,
+  Git,
+  Github,
+  HTML,
+  JavaScript,
+  PostgreSQL,
+  React,
+  ReactRouter,
+  Supabase,
+  TanStack,
+  TypeScript,
+  Zod,
+  Zustand,
+  Java,
+  Springboot,
+} from "@components/icons";
+import CardSkill from "./CardSkill.astro";
+import { Angular } from "@components/icons";
+
+const SKILL_DETAIL = [
+  {
+    icon: Astroo,
+    label: "Astro",
+    color: "rgba(231, 65, 173, 0.1)",
+    borderColor: "rgb(231, 65, 173)",
+  },
+
+  {
+    icon: Springboot,
+    label: "Springboot",
+    color: "rgba(231, 65, 173, 0.1)",
+    borderColor: "rgb(0, 204, 0)",
+  },
+  {
+    icon: Java,
+    label: "Java",
+    color: "rgba(231, 65, 173, 0.1)",
+    borderColor: "rgb(242, 242, 242)",
+  },
+  {
+    icon: React,
+    label: "React",
+    color: "rgba(102, 219, 251, 0.1)",
+    borderColor: "rgb(102, 219, 251)",
+  },
+  {
+    icon: Angular,
+    label: "Angular",
+    color: "rgba(54, 108, 185, 0.1)",
+    borderColor: "rgb(255, 204, 242)",
+  },
+  {
+    icon: HTML,
+    label: "HTML",
+    color: "rgba(228, 84, 43, 0.1)",
+    borderColor: "rgb(228, 84, 4)",
+  },
+  {
+    icon: CSS,
+    label: "CSS",
+    color: "rgba(45, 83, 229, 0.2)",
+    borderColor: "rgb(45, 83, 229)",
+  },
+  {
+    icon: ReactRouter,
+    label: "React Router",
+    color: "rgba(244, 72, 85, 0.1)",
+    borderColor: "rgb(244, 72, 85)",
+  },
+  {
+    icon: Supabase,
+    label: "Supabase",
+    color: "rgba(62, 207, 142, 0.1)",
+    borderColor: "rgb(62, 207, 142)",
+  },
+
+  {
+    icon: Git,
+    label: "Git",
+    color: "rgba(222, 76, 54, 0.1)",
+    borderColor: "rgb(222, 76, 54)",
+  },
+  {
+    icon: Github,
+    label: "Github",
+    color: "rgba(255, 255, 255, 0.1)",
+    borderColor: "rgb(255, 255, 255)",
+  },
+  {
+    icon: TailwindCSS,
+    label: "TailwindCSS",
+    color: "rgba(62, 191, 248, 0.1)",
+    borderColor: "rgb(62, 191, 248)",
+  },
+  {
+    icon: JavaScript,
+    label: "JavaScript",
+    color: "rgba(240, 219, 79, 0.1)",
+    borderColor: "rgb(240, 219, 79)",
+  },
+  {
+    icon: PostgreSQL,
+    label: "PostgreSQL",
+    color: "rgba(51, 103, 145, 0.15)",
+    borderColor: "rgb(51, 103, 145)",
+  },
+  {
+    icon: TanStack,
+    label: "TanStack Query",
+    color: "rgba(81, 126, 0, 0.1)",
+    borderColor: "rgb(81, 126, 0)",
+  },
+  {
+    icon: TypeScript,
+    label: "TypeScript",
+    color: "rgba(49, 120, 198, 0.15)",
+    borderColor: "rgb(49, 120, 198)",
+  },
+];
+---
+
+<section>
+  <Title>Habilidades</Title>
+  <div
+    class="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5"
+  >
+    {
+      SKILL_DETAIL.map((skill) => (
+        <CardSkill
+          color={skill.color}
+          label={skill.label}
+          borderColor={skill.borderColor}
+        >
+          <skill.icon class="size-7" />
+        </CardSkill>
+      ))
+    }
+  </div>
+</section>

@@ -1,0 +1,16 @@
+---
+import Title from "@components/ui/Title.astro";
+import CertificateItem from "./CertificateItem.astro";
+import certificates from "@data/certificates.json";
+---
+
+<section>
+  <Title>CERTIFICADOS</Title>
+  <div class="grid gap-5 md:grid-cols-2 grid-flow-row-auto">
+    {
+      certificates.map((certi, index) => (
+        <CertificateItem {...certi} num={index + 1} />
+      ))
+    }
+  </div>
+</section>

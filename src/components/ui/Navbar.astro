@@ -1,0 +1,133 @@
+---
+import { Bars, Close } from "@components/icons";
+const LINKS = [
+  {
+    label: "INICIO",
+    to: "#inicio",
+  },
+  {
+    label: "PROYECTOS",
+    to: "#proyectos",
+  },
+
+  {
+    label: "SOBRE MI",
+    to: "#sobre-mi",
+  },
+];
+
+const lastName = ["A", "C", "U", "A", "C", "H", "E"];
+---
+
+<header
+  id="main-nav"
+  class="flex items-center justify-between sm:py-3 fixed top-0 left-0 z-20 w-full pb-5 duration-300 p-7 py-4"
+>
+  <div class="max-w-5xl w-full mx-auto flex items-center justify-between">
+    <a class="flex gap-1 group select-none" href="#inicio">
+      {
+        lastName.map((letter, i) => (
+          <h3
+            class="inline-block text-2xl font-semibold tracking-wide transition-transform duration-300 ease-out group-hover:-translate-y-1 group-hover:rotate-3 group-hover:scale-110 group-hover:text-st group-hover:drop-shadow-[0_0_10px_rgba(248,113,113,0.6)]"
+            style={`transition-delay: ${i * 50}ms`}
+          >
+            {letter}
+          </h3>
+        ))
+      }
+    </a>
+    <nav class="hidden md:block">
+      <ul class="flex gap-10">
+        {
+          LINKS.map((link) => (
+            <li class="wit-max text-base">
+              <a
+                href={link.to}
+                class="relative group duration-300 hover:text-st "
+              >
+                <h4>{link.label}</h4>
+                <span class="absolute w-0 h-[2px] bottom-0 left-0 group-hover:right-0 group-hover:w-full bg-st duration-300" />
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+
+    <nav class="md:hidden">
+      <Bars class="size-8 cursor-pointer" id="bars" />
+      <div
+        id="bodyBars"
+        class="fixed w-75 h-dvh top-0 -right-full bg-[#101010] duration-300 flex flex-col p-5"
+      >
+        <div class="flex justify-end mb-5">
+          <Close class="size-8 cursor-pointer" id="menuClose" />
+        </div>
+        <ul class="flex flex-col gap-5">
+          {
+            LINKS.map((link) => (
+              <li>
+                <a href={link.to}>{link.label}</a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const initNavScroll = () => {
+    const nav = document.getElementById("main-nav");
+    if (!nav) return;
+    const handleScroll = () => {
+      nav.classList.toggle("is-scrolled", window.scrollY > 10);
+    };
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+  };
+  document.addEventListener("astro:page-load", initNavScroll);
+
+  const toogleNenu = () => {
+    const barsButton = document.querySelector("#bars");
+    const menu = document.querySelector("#bodyBars");
+    const menuClose = document.querySelector("#menuClose") as HTMLElement;
+    const closeMenu = () => {
+      menu?.classList.remove("isActive");
+    };
+    if (barsButton && menu) {
+      barsButton.addEventListener("click", () => {
+        menu.classList.toggle("isActive");
+      });
+    }
+    if (menuClose && menu) {
+      menuClose.addEventListener("click", closeMenu);
+    }
+    const menuLinks = menu?.querySelectorAll("a");
+    menuLinks?.forEach((link) => {
+      link.addEventListener("click", closeMenu);
+    });
+  };
+  document.addEventListener("astro:page-load", toogleNenu);
+</script>
+
+<style>
+  #main-nav {
+    width: 100%;
+    background: transparent;
+    backdrop-filter: blur(0);
+    border-bottom: 1px solid transparent;
+    box-shadow: none;
+  }
+
+  #main-nav.is-scrolled {
+    background: rgba(8, 8, 8, 0.85);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+  }
+  .isActive {
+    right: 0 !important;
+  }
+</style>

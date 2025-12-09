@@ -1,0 +1,130 @@
+[
+  {
+    "id": "social-network-by-acuache",
+    "title": "SocialHub — Red social básica en desarrollo",
+    "colorBG": ["#80b6d5", "#fdfdfd"],
+    "description": "Estoy creando una red social simple donde los usuarios pueden publicar fotos y videos, dar like y comentar con actualizaciones en tiempo real. Busco que la experiencia sea fluida, con un feed que carga contenido de forma continua mientras navegas. Este proyecto me está permitiendo entender la lógica interna de una plataforma social y cómo manejar datos que cambian constantemente. Aún está en desarrollo, pero ya cuenta con las funciones principales activas.",
+    "skills": ["Supabase", "Zustand", "TanStack Query", "TypeScript", "PostgreSQL", "React", "React Router", "TailwindCSS", "Zod"],
+    "links": {
+      "figma": "",
+      "github": "https://github.com/Acuache/social-network-by-acuache",
+      "web": "https://social-network-by-acuache-r2ev.vercel.app/"
+    },
+    "success" : [
+      "Gestionar estado global de forma limpia y escalable usando Zustand.",
+      "Manejar sincronización de datos y caché con TanStack Query.",
+      "Integrar Supabase para autenticación, base de datos y almacenamiento.",
+      "Diseñar la estructura de tablas en PostgreSQL pensando en relaciones y eficiencia.",
+      "Implementar actualizaciones en tiempo real mediante triggers, listeners y funcionalidades reactivas.",
+      "Conectar correctamente frontend y backend para un flujo fluido de publicaciones, likes y comentarios."
+    ], 
+    "challenges": [
+      "Configurar triggers en PostgreSQL/Supabase para lograr actualizaciones automáticas sin refrescar la página.",
+      "Mantener los datos sincronizados en tiempo real sin duplicados ni estados inconsistentes.",
+      "Diseñar una base de datos escalable para posts, usuarios, likes y comentarios.",
+      "Integrar múltiples tecnologías (Zustand, TanStack Query, Supabase) sin generar conflictos entre estados y peticiones.",
+      "Implementar infinite scroll con TanStack Query sin romper la paginación y manteniendo la experiencia fluida."
+    ]
+  },
+  {
+    "id": "robbuild-ong",
+    "title": "ROBBUILD - ONG",
+    "colorBG": ["#b6ded7", "#2ea484"],
+    "description": "Proyecto desarrollado para la organización Robbuild en Lima, donde integré un sistema de donaciones con PayPal y diseñé el prototipo completo en Figma antes de iniciar el desarrollo. Busqué crear una plataforma moderna, clara y confiable, con un enfoque en velocidad, fluidez y coherencia visual. Durante el proceso añadí animaciones, optimizaciones y ajustes que mejoraron la experiencia final, trabajando siempre en comunicación directa con la organización.",
+    "skills": ["React", "React Router", "Figma","TypeScript", "TailwindCSS","SALIENT"],
+    "links": {
+      "figma": "https://www.figma.com/design/IOi8w5HzQLD1iZOKGwe7vp/Robbuild?node-id=1-15&t=VvZnGQzzVNAwZUCP-1",
+      "github": "",
+      "web": "https://robbuild.com/"
+    },
+    "success": [
+      "Diseñar prototipos completos en Figma con la metodología 'ATOMIC DESIGN' y convertirlos en una implementación fiel.", 
+      "Escuchar, entender y traducir correctamente las necesidades del cliente hacia la parte funcional y visual del proyecto.", 
+      "Optimizar rendimiento y estructura general para lograr una mejor experiencia de usuario.", 
+      "Aplicar animaciones avanzadas sin afectar la fluidez del sitio.",
+      "Construir prototipos coherentes en Figma y trasladarlos correctamente al desarrollo.",
+      "Implementar un sistema de donación real y comprender su flujo.",
+      "Profundizar en prácticas de SEO técnico y mejoras de carga.",
+      "Mantener comunicación efectiva con una organización y adaptarme al feedback."
+    ],
+    "challenges": [
+      "Integrar correctamente el método de pago PayPal dentro del flujo del proyecto.",
+      "Optimizar el sitio para que cargue rápido, aunque incluya animaciones y contenido multimedia.",
+      "Ajustar varias secciones para que mantengan buena estructura en diferentes tamaños de pantalla.",
+      "Implementar mejoras de SEO sin afectar la experiencia visual.",
+      "Mantener consistencia entre el prototipo inicial y la versión final, incluso con cambios solicitados durante el desarrollo.",
+      "Coordinar en equipo y adaptarme al feedback de múltiples personas (diseñador, gerente, organización)."
+    ]
+  },
+  {
+    "id": "animaciones-que-impactan",
+    "title": "ANIMACIONES QUE IMPACTAN",
+    "colorBG": ["#27272e", "#4644dd"],
+    "description": "Proyecto estructurado con la metodología BEM, centrado en la creación de una plantilla animada con efectos visuales dinámicos. Incluye un diseño moderno y animaciones de bolitas flotantes que se desplazan de forma aleatoria en distintas secciones, generando una experiencia visual atractiva y fluida.",
+    "skills": ["JavaScript", "HTML", "CSS"],
+    "links": {
+      "figma": "",
+      "github": "https://github.com/Acuache/animaciones-que-impactan",
+      "web": "https://animaciones-que-impactan-michael-acuache.vercel.app/"
+    },
+    "success": [
+      "Organizar estilos de manera escalable utilizando BEM.", 
+      "Implementar y optimizar animaciones complejas para mejorar la experiencia visual.", 
+      "Aplicar principios de diseño y movimiento para crear interfaces más atractivas.", 
+      "Fortalecer la lógica de animaciones con JavaScript."
+    ],
+    "challenges": [
+      "Conseguir que las animaciones de las bolitas se vieran naturales y aleatorias.",
+      "Mantener un buen rendimiento sin afectar la fluidez del sitio.",
+      "Coordinar las animaciones y transiciones sin romper la estructura base del proyecto."
+    ]
+  },
+  {
+    "id": "game-perfect",
+    "title": "GAME PERFECT",
+    "colorBG": ["#329153", "#ffffff"],
+    "description": "Proyecto desarrollado con una estructura basada en la metodología BEM, enfocado en construir un sitio moderno, organizado y totalmente responsivo. En este proyecto puse en práctica tanto Flexbox como CSS Grid para crear una distribución visual dinámica y bien equilibrada. Además, trabajé animaciones suaves para mostrar y ocultar las opciones del navbar mediante un efecto de desvanecimiento, logrando una navegación fluida y visualmente agradable.",
+    "skills": ["JavaScript", "HTML", "CSS"],
+    "links": {
+      "figma": "",
+      "github": "https://github.com/Acuache/page-web",
+      "web": "https://game-perfect-michael-acuache.vercel.app/"
+    },
+    "success": [
+      "Utilizar de forma adecuada CSS Grid y Flexbox según cada necesidad de diseño.", 
+      "Aplicar semántica HTML y una estructura correcta para mejorar accesibilidad y organización.", 
+      "Estructurar correctamente un proyecto siguiendo los principios de BEM.", 
+      "Implementar animaciones y transiciones sutiles para mejorar la experiencia de usuario."
+    ],
+    "challenges": [
+      "Lograr que las opciones del navbar aparezcan y desaparezcan con un efecto suave de desvanecimiento.",
+      "Ajustar el diseño responsivo manejando Grid y Flex juntos sin romper la estructura.",
+      "Mantener el orden y escalabilidad del proyecto aplicando correctamente la metodología BEM."
+    ]
+  },
+  {
+    "id": "ecommerce-frontend",
+    "title": "E-COMMERCE FRONTEND",
+    "colorBG": ["#c7cdcd", "#6a6d70"],
+    "description": "Proyecto desarrollado como mi primer ecommerce usando React, enfocado completamente en la lógica y experiencia de usuario del frontend. Incluye un sistema de login con ruta protegida, donde el acceso se valida mediante un número de DNI peruano o de forma libre sin registrarse. El usuario puede explorar categorías de productos, visualizar detalles individuales con React Router, aplicar filtros por tipo de ropa y gestionar un carrito dinámico con total fluidez.",
+    "skills": ["React", "Figma","React Router", "TypeScript", "TailwindCSS"],
+    "links": {
+      "figma": "https://www.figma.com/design/B4annw3TcXL6tVEYnKqWze/IHM?node-id=106-1225&t=lbH58YRkHCSpfhj8-1",
+      "github": "https://github.com/Acuache/react-ecommerce-ac",
+      "web": "https://acuache-ecommerce.vercel.app/"
+    },
+    "success": [
+      "Manejar la arquitectura de un proyecto en React desde cero.", 
+      "Crear rutas protegidas y gestionar navegación avanzada con React Router.", 
+      "Diseñar interfaces ordenadas y responsivas a partir de prototipos hechos en Figma.", 
+      "Implementar estados globales y lógica de carrito con persistencia en el navegador.",
+      "Consumir APIs de forma eficiente para validación y login."
+    ],
+    "challenges": [
+      "Lograr que los productos del carrito fueran persistentes utilizando localStorage.",
+      "Implementar un sistema de filtros dinámicos sin afectar el rendimiento.",
+      "Consumir y validar correctamente la API para el login, asegurando la ruta protegida.",
+      "Coordinar navegación, estados y vistas detalladas de productos con React Router."
+    ]
+  }
+]

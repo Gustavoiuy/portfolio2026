@@ -1,0 +1,192 @@
+---
+import { Github, LinkedIn, Tiktok } from "@components/icons";
+import { Image } from "astro:assets";
+import photoprofile from "../../assets/profileTrejo.jpeg";
+import photoprofile1 from "../../assets/perfiltrejo.png";
+import SkillsMarquee from "@components/hero/SkillsMarquee.astro";
+---
+
+<section
+  class="flex flex-col gap-2 sm:flex-row sm:items-center my-20 mt-25 scroll-mt-24"
+  id="inicio"
+>
+  <div
+    class="content-center image max-w-50 mx-auto sm:basis-4/5 md:max-w-70 md:basis-1/2"
+  >
+    <Image
+      src={photoprofile1}
+      alt="Foto de perfil Gustavo Trejo Cruz"
+      layout="constrained"
+      class="object-cover mask-radial-at-center mask-radial-from-50% mask-radial-to-80% animate-pulse-fade-in inset-shadow-2xl inset-shadow-red-700"
+    />
+    <span
+      class="text-white text-xl
+        font-mono px-3 py-1
+        border border-sky-500/50 rounded-full flex items-center justify-center shadow-sm
+        bg-black/65
+        cursor-crosshair
+        z-10"
+    >
+      @TrejoCruzdev
+      <svg
+        class="ml-1 w-5 h-5 text-sky-700 inline"
+        fill="currentColor"
+        viewBox="0 0 20 20"
+        aria-hidden="true"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707a1 1 0 00-1.414-1.414L9 11.172l-1.293-1.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+          clip-rule="evenodd"></path>
+      </svg>
+    </span>
+  </div>
+
+  <div class="items-center flex flex-col gap-2 sm:basis-1/5 md:basis-1/2">
+    <h1 class="title text-2xl text-st xs:text-3xl x white lg:text-4xl">
+      Gustavo Adolfo <br /> Trejo Cruz
+    </h1>
+    <span class="subtitle text-xl xs:text-2xl">Desarrollador Full Stack</span>
+    <p class="description text-sm text-balance xs:text-base">
+      Apasionado por el desarrollo web, con experiencia en creación de
+      aplicaciones y sitios web modernos y funcionales.
+    </p>
+    <div class="flex gap-4 items-center">
+      <a
+        aria-label="Ir al Tiktok de Gustavo Trejo"
+        href="https://www.tiktok.com/@youngdev_yf"
+        target="_blank"
+        class="social-link relative flex items-center justify-center rounded-2xl border border-white/20 bg-white p-2 transition-all duration-300 hover:border-st/80 hover:bg-white/10 hover:shadow-[0_0_20px_rgba(0,255,153,0.35)]"
+      >
+        <Tiktok
+          class="relative size-6 transition-transform duration-300 group-hover:scale-110"
+        />
+      </a>
+      <a
+        aria-label="Ir al Github de Michael Acuache"
+        href="https://github.com/Gustavoiuy"
+        target="_blank"
+        class="social-link relative flex items-center justify-center rounded-2xl border border-white/20 bg-white/5 p-2 transition-all duration-300 hover:border-st/80 hover:bg-white/10 hover:shadow-[0_0_20px_rgba(0,255,153,0.35)]"
+      >
+        <Github
+          class="relative size-6 transition-transform duration-300 group-hover:scale-110"
+        />
+      </a>
+      <a
+        aria-label="Ir al LinkedIn de Michael Acuache"
+        href="www.linkedin.com/in/gustavotcruz-dev"
+        target="_blank"
+        class="social-link relative flex items-center justify-center rounded-2xl border border-white/20 bg-white/5 p-2 transition-all duration-300 hover:border-st/80 hover:bg-white/10 hover:shadow-[0_0_20px_rgba(0,255,153,0.35)]"
+      >
+        <LinkedIn class="size-6" />
+      </a>
+      <a
+        href="https://drive.google.com/file/d/1IJ_GWojPwz8m7svlo99qvgUygo_pYk2u/view?usp=drive_link"
+        target="_blank"
+        class="cv-link py-2 px-5 duration-300 hover:text-st relative group"
+      >
+        <span
+          class="absolute top-0 left-0 w-2 h-2 border-st border-t-2 border-l-2 group-hover:w-full group-hover:h-full duration-300"
+        ></span>
+        <span
+          class="absolute right-0 bottom-0 w-2 h-2 border-st border-b-2 border-r-2 group-hover:w-full group-hover:h-full duration-300"
+        ></span>
+        Ver CV</a
+      >
+    </div>
+  </div>
+</section>
+<SkillsMarquee />
+
+<script>
+  const handleAstroLoad = () => {
+    const title = document.querySelector(".title");
+    const subtitle = document.querySelector(".subtitle");
+    const image = document.querySelector(".image");
+    const description = document.querySelector(".description");
+    const socialLinks = document.querySelectorAll(".social-link");
+    const cvLink = document.querySelector(".cv-link");
+
+    if (!title || !subtitle || !image || !description || !cvLink) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.2,
+      }
+    );
+
+    [title, subtitle, image, description].forEach((element) =>
+      observer.observe(element)
+    );
+
+    socialLinks.forEach((link) => observer.observe(link));
+    observer.observe(cvLink);
+  };
+  document.addEventListener("astro:page-load", handleAstroLoad);
+  document.addEventListener("DOMContentLoaded", handleAstroLoad);
+</script>
+
+<style>
+  .title,
+  .subtitle,
+  .image,
+  .description,
+  .social-link,
+  .cv-link {
+    transition-duration: 500ms;
+    transition-timing-function: ease-out;
+    transition-property: opacity, transform;
+    opacity: 0;
+  }
+
+  .title {
+    transform: translateX(-80px);
+  }
+
+  .subtitle,
+  .description {
+    transform: translateX(-80px);
+    transition-delay: 500ms;
+  }
+
+  .image {
+    transform: translateX(80px);
+  }
+
+  .social-link {
+    transform: translateY(40px);
+  }
+
+  .social-link:nth-child(1) {
+    transition-delay: 600ms;
+  }
+
+  .social-link:nth-child(2) {
+    transition-delay: 800ms;
+  }
+
+  .cv-link {
+    transform: translateY(40px);
+    transition-delay: 1000ms;
+  }
+
+  .title.visible,
+  .subtitle.visible,
+  .image.visible,
+  .description.visible,
+  .social-link.visible,
+  .cv-link.visible {
+    opacity: 1;
+    transform: translate(0px, 0px);
+  }
+</style>

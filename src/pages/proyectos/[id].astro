@@ -1,0 +1,201 @@
+---
+import BackgroundArt from "@components/BackgroundArt.astro";
+import { Image } from "astro:assets";
+import Layout from "@/layouts/Layout.astro";
+import type { GetStaticPaths } from "astro";
+import projects from "@/data/projects.json";
+import { Arrow, Github } from "@components/icons";
+import {
+  Astroo,
+  React as ReactIcon,
+  CSS,
+  HTML,
+  JavaScript,
+  TypeScript,
+  TailwindCSS,
+  Zod,
+  Zustand,
+  ReactRouter,
+  TanStack,
+  Supabase,
+  PostgreSQL,
+  Figma,
+  Web,
+} from "@components/icons/react";
+
+export const getStaticPaths = (() => {
+  const filter = projects.map((project) => ({
+    params: { id: project.id },
+    props: { project },
+  }));
+  return filter;
+}) satisfies GetStaticPaths;
+
+const { project } = Astro.props;
+const SKILL_ICONS: Record<string, any> = {
+  Astro: Astroo,
+  React: ReactIcon,
+  CSS,
+  HTML,
+  JavaScript,
+  TypeScript,
+  "React Router": ReactRouter,
+  "TanStack Query": TanStack,
+  TailwindCSS,
+  Zod,
+  Zustand,
+  Supabase,
+  PostgreSQL,
+  Figma,
+};
+
+import AnimacionesQueImpactan from "@projects/animaciones-que-impactan.webp";
+import GamePerfect from "@projects/game-perfect.webp";
+import EcommerceFrontend from "@projects/ecommerce-frontend.webp";
+import RobbuildOng from "@projects/robbuild-ong.webp";
+import socialHub from "@projects/social-network-by-acuache.webp";
+const PROJECT_IMAGES: Record<string, any> = {
+  "animaciones-que-impactan": AnimacionesQueImpactan,
+  "game-perfect": GamePerfect,
+  "ecommerce-frontend": EcommerceFrontend,
+  "robbuild-ong": RobbuildOng,
+  "social-network-by-acuache": socialHub,
+};
+const imagenProject = PROJECT_IMAGES[project.id];
+---
+
+<Layout>
+  <BackgroundArt />
+  <Arrow
+    id="arrow-back"
+    class="size-8 cursor-pointer hover:text-st duration-300 mt-10 rotate-90"
+    aria-label="Ir hacia atrás"
+  />
+  <main class="flex
+    flex-col
+    gap-5
+    md:flex-row
+    sm:mt-5">
+    <div class="flex-1/2">
+      <h1 class="text-4xl text-st mb-5 sm:text-5xl text-balance">
+        {project.title}
+      </h1>
+      <p>{project.description}</p>
+
+      <div class="mt-5 w-fit flex gap-1">
+        {
+          project.links.figma.length !== 0 && (
+            <a
+              href={project.links.figma}
+              class="inline-flex p-2 rounded-lg border border-transparent hover:border-white/20 hover:bg-white/5 transition-all duration-300"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Ir al figma del proyecto ${project.title}`}
+            >
+              <Figma className="size-6" />
+            </a>
+          )
+        }
+        {
+          project.links.github.length !== 0 && (
+            <a
+              href={project.links.github}
+              class="inline-flex p-2 rounded-lg border border-transparent hover:border-white/20 hover:bg-white/5 transition-all duration-300"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Ir al github del proyecto ${project.title}`}
+            >
+              <Github class="size-6" />
+            </a>
+          )
+        }
+        {
+          project.links.web.length !== 0 && (
+            <a
+              href={project.links.web}
+              class="inline-flex p-2 rounded-lg border border-transparent hover:border-white/20 hover:bg-white/5 transition-all duration-300"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Ir al sitio web del proyecto ${project.title}`}
+            >
+              <Web className="size-6" />
+            </a>
+          )
+        }
+      </div>
+
+      <div class="flex flex-col mt-5 gap-2">
+        <h3 class="text-xl">SKILLS</h3>
+        <section class="flex flex-wrap gap-3">
+          {
+            project.skills.map((skill) => {
+              if (skill === "SALIENT") return;
+              const Icon = SKILL_ICONS[skill];
+              return Icon ? (
+                <article class="group inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/3 px-4 py-2 text-sm text-white/70 transition duration-300 hover:border-st/60 hover:bg-white/8 hover:text-white hover:shadow-[0_0_20px_rgba(0,255,153,0.35)]">
+                  <Icon className="size-4" />
+                  <span class="font-medium tracking-wide">{skill}</span>
+                </article>
+              ) : (
+                <span class="inline-flex items-center rounded-full border border-white/10 px-4 py-2 text-sm text-white/70">
+                  {skill}
+                </span>
+              );
+            })
+          }
+        </section>
+      </div>
+    </div>
+    <div
+      class="flex justify-center items-center mx-auto max-w-120 md:max-w-none md:flex-1/2"
+    >
+      <Image
+        transition:name={project.id}
+        src={imagenProject}
+        layout="constrained"
+        alt={`Imagen del proyecto ${project.id}`}
+      />
+    </div>
+  </main>
+  <div class="flex flex-col gap-5 mt-5 md:flex-row md:mt-10 pb-20">
+    <div class="flex gap-2 flex-col">
+      <h3 class="text-xl">LO QUE APRENDÍ</h3>
+      <ul class="flex flex-col gap-3">
+        {
+          project.success.map((good) => (
+            <li class="rounded-xl border border-white/10 bg-white/5 px-4 py-3 transition duration-300 hover:border-st/70 hover:bg-white/10 hover:shadow-[0_0_18px_rgba(0,255,153,0.25)]">
+              <p class="text-sm leading-relaxed text-white/75 group-hover:text-white">
+                {good}
+              </p>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+    <div class="flex gap-2 flex-col">
+      <h3 class="text-xl">RETOS ENFRENTADOS</h3>
+      <ul class="flex flex-col gap-3">
+        {
+          project.challenges.map((challenge) => (
+            <li class="rounded-xl border border-white/10 bg-white/5 px-4 py-3 transition duration-300 hover:border-st/70 hover:bg-white/10 hover:shadow-[0_0_18px_rgba(0,255,153,0.25)]">
+              <p class="text-sm leading-relaxed text-white/75 group-hover:text-white">
+                {challenge}
+              </p>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+</Layout>
+
+<script>
+  const handleAstroLoad = () => {
+    const arrowBack = document.querySelector("#arrow-back") as HTMLElement;
+    if (!arrowBack) return;
+    arrowBack.addEventListener("click", () => {
+      history.back();
+    });
+  };
+  document.addEventListener("astro:page-load", handleAstroLoad);
+</script>

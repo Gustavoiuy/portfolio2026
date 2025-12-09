@@ -1,0 +1,115 @@
+---
+import {
+  Astroo,
+  Figma,
+  JavaScript,
+  PostgreSQL,
+  React,
+  Supabase,
+  TailwindCSS,
+  TypeScript,
+  Zod,
+  Zustand,
+} from "@components/icons";
+
+const SKILLS = [
+  {
+    icon: JavaScript,
+    label: "JavaScript",
+  },
+  {
+    icon: PostgreSQL,
+    label: "PostgreSQL",
+  },
+  {
+    icon: Astroo,
+    label: "Astro",
+  },
+  {
+    icon: Figma,
+    label: "Figma",
+  },
+  {
+    icon: React,
+    label: "React",
+  },
+  {
+    icon: Supabase,
+    label: "Supabase",
+  },
+  {
+    icon: TailwindCSS,
+    label: "TailwindCSS",
+  },
+  {
+    icon: TypeScript,
+    label: "TypeScript",
+  },
+  {
+    icon: Zod,
+    label: "Zod",
+  },
+  {
+    icon: Zustand,
+    label: "Zustand",
+  },
+];
+const SKILLS_X3 = [...SKILLS, ...SKILLS, ...SKILLS];
+---
+
+<section class="marquee overflow-hidden my-10">
+  <div class="marquee-track flex gap-15">
+    {
+      SKILLS_X3.map((skill) => (
+        <article
+          class="flex gap-[6px] items-center"
+          aria-label={`logo-${skill.label}`}
+        >
+          <skill.icon class="size-9" />
+          <p>{skill.label}</p>
+        </article>
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  .marquee {
+    position: relative;
+  }
+
+  .marquee::before,
+  .marquee::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 72px;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .marquee::before {
+    left: 0;
+    background: linear-gradient(90deg, #101010 0%, rgba(16, 16, 16, 0) 80%);
+  }
+
+  .marquee::after {
+    right: 0;
+    background: linear-gradient(270deg, #101010 0%, rgba(16, 16, 16, 0) 80%);
+  }
+
+  .marquee-track {
+    width: max-content;
+    animation: marquee 35s linear infinite;
+  }
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+</style>

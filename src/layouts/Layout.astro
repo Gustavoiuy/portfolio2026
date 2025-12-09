@@ -1,0 +1,77 @@
+---
+import "../styles/global.css";
+import { ClientRouter } from "astro:transitions";
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z1926X80M3"
+    ></script>
+    <script is:raw>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-Z1926X80M3");
+    </script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/public/profileTrejo.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>GustavoTC| Portafolio</title>
+    <ClientRouter />
+
+    <meta name="author" content="Michael Acuache Yalle" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portafolio de Michael Acuache, desarrollador frontend autodidacta en crecimiento, con interés en diseño, UX/UI y la creación de experiencias web modernas y cuidadas."
+    />
+  </head>
+  <body class="max-w-5xl mx-auto p-4 xs:p-6 xl:p-0 overflow-x-hidden">
+    <slot />
+  </body>
+</html>
+
+<style>
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /*Scroll CHROME*/
+  html::-webkit-scrollbar {
+    width: 25px;
+    background: transparent;
+  }
+  html::-webkit-scrollbar-thumb {
+    border: 10px solid transparent;
+    box-shadow: none;
+    border-radius: 30px;
+    box-shadow: inset 0 0 0 10px #d3d3d4;
+  }
+  html:hover::-webkit-scrollbar-thumb:hover {
+    border: 8px solid transparent;
+    box-shadow: inset 0 0 0 15px #00ff99;
+  }
+  html::-webkit-scrollbar-track {
+    margin: 10px 0;
+  }
+
+  /*Scroll MOZ*/
+  @supports (-moz-appearance: none) {
+    html {
+      scrollbar-width: auto;
+      scrollbar-color: #00ff99 transparent;
+    }
+  }
+
+  body {
+    background-color: hwb(233 1% 92%);
+    color: #d8d8d8;
+  }
+</style>
