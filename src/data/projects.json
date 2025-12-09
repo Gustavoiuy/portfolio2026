@@ -1,9 +1,9 @@
 [
   {
     "id": "social-network-by-acuache",
-    "title": "SocialHub — Red social básica en desarrollo",
+    "title": "friendsred",
     "colorBG": ["#80b6d5", "#fdfdfd"],
-    "description": "Estoy creando una red social simple donde los usuarios pueden publicar fotos y videos, dar like y comentar con actualizaciones en tiempo real. Busco que la experiencia sea fluida, con un feed que carga contenido de forma continua mientras navegas. Este proyecto me está permitiendo entender la lógica interna de una plataforma social y cómo manejar datos que cambian constantemente. Aún está en desarrollo, pero ya cuenta con las funciones principales activas.",
+    "description": "Red social donde los usuarios pueden publicar fotos y videos, dar like y comentar con actualizaciones en tiempo real.",
     "skills": ["Supabase", "Zustand", "TanStack Query", "TypeScript", "PostgreSQL", "React", "React Router", "TailwindCSS", "Zod"],
     "links": {
       "figma": "",
@@ -28,9 +28,9 @@
   },
   {
     "id": "robbuild-ong",
-    "title": "ROBBUILD - ONG",
+    "title": "ROBBUILD",
     "colorBG": ["#b6ded7", "#2ea484"],
-    "description": "Proyecto desarrollado para la organización Robbuild en Lima, donde integré un sistema de donaciones con PayPal y diseñé el prototipo completo en Figma antes de iniciar el desarrollo. Busqué crear una plataforma moderna, clara y confiable, con un enfoque en velocidad, fluidez y coherencia visual. Durante el proceso añadí animaciones, optimizaciones y ajustes que mejoraron la experiencia final, trabajando siempre en comunicación directa con la organización.",
+    "description": "Proyecto desarrollado para la organización Robbuild en Lima,sistema de donaciones con PayPal.",
     "skills": ["React", "React Router", "Figma","TypeScript", "TailwindCSS","SALIENT"],
     "links": {
       "figma": "https://www.figma.com/design/IOi8w5HzQLD1iZOKGwe7vp/Robbuild?node-id=1-15&t=VvZnGQzzVNAwZUCP-1",
@@ -104,7 +104,7 @@
   },
   {
     "id": "ecommerce-frontend",
-    "title": "E-COMMERCE FRONTEND",
+    "title": "shoeshop",
     "colorBG": ["#c7cdcd", "#6a6d70"],
     "description": "Proyecto desarrollado como mi primer ecommerce usando React, enfocado completamente en la lógica y experiencia de usuario del frontend. Incluye un sistema de login con ruta protegida, donde el acceso se valida mediante un número de DNI peruano o de forma libre sin registrarse. El usuario puede explorar categorías de productos, visualizar detalles individuales con React Router, aplicar filtros por tipo de ropa y gestionar un carrito dinámico con total fluidez.",
     "skills": ["React", "Figma","React Router", "TypeScript", "TailwindCSS"],
