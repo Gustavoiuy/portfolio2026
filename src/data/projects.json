@@ -1,14 +1,14 @@
 [
   {
     "id": "social-network-by-acuache",
-    "title": "friendsred",
+    "title": "YUME",
     "colorBG": ["#80b6d5", "#fdfdfd"],
-    "description": "Red social donde los usuarios pueden publicar fotos y videos, dar like y comentar con actualizaciones en tiempo real.",
+    "description": "Pagina web de Restaurante YUME, desarrollado con React y TailwindCSS, siguiendo un diseño moderno y responsivo.",
     "skills": ["Supabase", "Zustand", "TanStack Query", "TypeScript", "PostgreSQL", "React", "React Router", "TailwindCSS", "Zod","SALIENT"],
     "links": {
       "figma": "",
-      "github": "https://github.com/Acuache/social-network-by-acuache",
-      "web": "https://social-network-by-acuache-r2ev.vercel.app/"
+      "github": "https://github.com/Gustavoiuy/Yume-Restaurantjapanesse",
+      "web": "https://yume-restaurant-japanese.vercel.app/"
     },
     "success" : [
       "Gestionar estado global de forma limpia y escalable usando Zustand.",
