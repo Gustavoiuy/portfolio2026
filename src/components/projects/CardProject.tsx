@@ -71,7 +71,7 @@ export function CardProject({ id, title, description, skills, links, colorBG }: 
        
         <div className='p-4 flex flex-col gap-3 justify-between flex-1'>
           <div>
-            <h4 className='text-lg sm:text-2xl font-mono font-bold text-white mb-1'>{title}</h4>
+            <h4 className='text-lg sm:text-2xl font-sans font-normal text-white mb-1'>{title}</h4>
             <p className='line-clamp-3 sm:line-clamp-4 text-sm sm:text-base text-gray-300'>{description}</p>
           </div>
           
