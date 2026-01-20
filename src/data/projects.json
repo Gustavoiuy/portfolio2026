@@ -85,7 +85,7 @@
     "title": "Urbanfresh",
     "colorBG": ["#c7cdcd", "#6a6d70"],
     "description": "Proyecto desarrollado como mi primer ecommerce usando React, enfocado completamente en la lógica y experiencia de usuario del frontend. Incluye un sistema de login con ruta protegida, donde el acceso se valida mediante un número de DNI peruano o de forma libre sin registrarse. El usuario puede explorar categorías de productos, visualizar detalles individuales con React Router, aplicar filtros por tipo de ropa y gestionar un carrito dinámico con total fluidez.",
-    "skills": ["React", "Figma","React Router", "TypeScript", "TailwindCSS","SALIENT"],
+    "skills": ["React", "Astro","React Router", "TypeScript", "TailwindCSS","SALIENT"],
     "links": {
       "figma": "https://www.figma.com/design/B4annw3TcXL6tVEYnKqWze/IHM?node-id=106-1225&t=lbH58YRkHCSpfhj8-1",
       "github": "https://github.com/Gustavoiuy/Urbanfresh",
@@ -104,5 +104,31 @@
       "Consumir y validar correctamente la API para el login, asegurando la ruta protegida.",
       "Coordinar navegación, estados y vistas detalladas de productos con React Router."
     ]
+  },
+
+  
+  {
+    "id": "ApiNET",
+    "title": "APIREST-Ecommerce",
+    "colorBG": ["#c7cdcd", "#6a6d70"],
+    "description": "backend robusto desarrollado con ASP.NET Core Web API para una plataforma de e-commerce. Esta API RESTful gestiona la lógica de negocio central, incluyendo el catálogo de productos, categorización dinámica, inventario y la autenticación de usuarios. Diseñada bajo principios de arquitectura limpia y separación de responsabilidades, sirve como la única fuente de verdad para aplicaciones cliente (frontend), garantizando la integridad de los datos y un rendimiento óptimo mediante consultas eficientes a base de datos SQL..",
+    "skills": ["Dotnet","React","SALIENT"],
+    "links": {
+      "figma": "",
+      "github": "https://github.com/Gustavoiuy/ApiEcomerce",
+      "web": "https://apiecommercev1-d2bee5hpchghavcy.canadacentral-01.azurewebsites.net/swagger/index.html]?"
+    },
+    "success": [
+    "Diseño e implementación de una API RESTful escalable siguiendo estándares de la industria con .NET.",
+    "Modelado de datos complejo utilizando Entity Framework Core (Code-First) para relaciones entre productos y categorías.",
+    "Implementación de un sistema de seguridad sólido mediante Autenticación y Autorización con tokens JWT para proteger endpoints sensibles.",
+    "Documentación interactiva y exhaustiva de todos los endpoints utilizando Swagger/OpenAPI para facilitar el consumo por parte del frontend."
+  ],
+  "challenges": [
+    "Optimizar el rendimiento de consultas LINQ complejas para el filtrado y paginación de productos sin impactar la velocidad de respuesta.",
+    "Gestionar correctamente las migraciones de base de datos en un entorno de desarrollo iterativo.",
+    "Estandarizar el manejo global de excepciones para devolver códigos y mensajes de error HTTP consistentes al cliente.",
+    "Configurar el despliegue y las variables de entorno para su publicación en Azure App Service."
+  ]
   }
 ]

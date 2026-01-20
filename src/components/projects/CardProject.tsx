@@ -17,6 +17,7 @@ import {
   Supabase,
   PostgreSQL,
   Figma,
+  Dotnet
 } from '@components/icons/react'
 
 const SKILL_ICONS: Record<string, any> = {
@@ -34,6 +35,7 @@ const SKILL_ICONS: Record<string, any> = {
   Supabase,
   PostgreSQL,
   Figma,
+  Dotnet
 }
 
 export function CardProject({ id, title, description, skills, links, colorBG }: ProjectProps) {

@@ -1,4 +1,4 @@
-import { Astroo, React, CSS, Figma, HTML, JavaScript, PostgreSQL, ReactRouter, Supabase, TailwindCSS, TanStack, TypeScript, Zod, Zustand, Star } from '@components/icons/react'
+import { Astroo, React, Dotnet, Figma, HTML, JavaScript, PostgreSQL, ReactRouter, Supabase, TailwindCSS, TanStack, TypeScript, Zod, Zustand, Star } from '@components/icons/react'
 import { SkillProject } from '@components/projects/SkillProject'
 import { CardProject } from '@components/projects/CardProject'
 import { useState, useRef } from 'react'
@@ -25,19 +25,12 @@ const ArrowRight = () => (
 
 const SKILLS_PROJECTS = [
   { label: "Astro", icon: Astroo },
-  { label: "CSS", icon: CSS },
+  { label: "Dotnet", icon: Dotnet },
   { label: "HTML", icon: HTML },
   { label: "React", icon: React },
-  { label: "Figma", icon: Figma },
   { label: "JavaScript", icon: JavaScript },
-  { label: "PostgreSQL", icon: PostgreSQL },
-  { label: "React Router", icon: ReactRouter },
   { label: "Supabase", icon: Supabase },
-  { label: "TailwindCSS", icon: TailwindCSS },
-  { label: "TanStack Query", icon: TanStack },
-  { label: "TypeScript", icon: TypeScript },
-  { label: "Zod", icon: Zod },
-  { label: "Zustand", icon: Zustand },
+  
 ]
 
 export const ProjectLogic = () => {
