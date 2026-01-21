@@ -1,4 +1,4 @@
-import { Astroo, React, Dotnet, Figma, HTML, JavaScript, PostgreSQL, ReactRouter, Supabase, TailwindCSS, TanStack, TypeScript, Zod, Zustand, Star } from '@components/icons/react'
+import { Astroo, React, Net, Figma, HTML, JavaScript, PostgreSQL, ReactRouter, Supabase, TailwindCSS, TanStack, TypeScript, Zod, Zustand, Star } from '@components/icons/react'
 import { SkillProject } from '@components/projects/SkillProject'
 import { CardProject } from '@components/projects/CardProject'
 import { useState, useRef } from 'react'
