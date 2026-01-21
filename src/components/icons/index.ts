@@ -1,6 +1,6 @@
 export { default as Astroo } from './Astroo.svg';
 export { default as CSS } from './CSS.svg';
-export { default as Dotnet } from './NET.svg';
+export { default as Dotnet } from './Net.svg';
 export { default as Figma } from './Figma.svg';
 export { default as Git } from './Git.svg';
 export { default as Github } from './Github.svg';
