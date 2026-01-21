@@ -108,7 +108,7 @@
 
   
   {
-    "id": "apinetcore",
+    "id": "apinet-core",
     "title": "APIREST-Ecommerce",
     "colorBG": ["#c7cdcd", "#6a6d70"],
     "description": "backend robusto desarrollado con ASP.NET Core Web API para una plataforma de e-commerce. Esta API RESTful gestiona la lógica de negocio central, incluyendo el catálogo de productos, categorización dinámica, inventario y la autenticación de usuarios. Diseñada bajo principios de arquitectura limpia y separación de responsabilidades, sirve como la única fuente de verdad para aplicaciones cliente (frontend), garantizando la integridad de los datos y un rendimiento óptimo mediante consultas eficientes a base de datos SQL..",
