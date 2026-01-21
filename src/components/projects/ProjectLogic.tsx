@@ -25,7 +25,7 @@ const ArrowRight = () => (
 
 const SKILLS_PROJECTS = [
   { label: "Astro", icon: Astroo },
-  { label: "Dotnet", icon: Dotnet },
+  { label: "Dotnet", icon: Net },
   { label: "HTML", icon: HTML },
   { label: "React", icon: React },
   { label: "JavaScript", icon: JavaScript },
