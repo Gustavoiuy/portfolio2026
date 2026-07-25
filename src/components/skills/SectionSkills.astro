@@ -19,11 +19,36 @@ import {
   Zustand,
   Java,
   Springboot,
+  Net,
 } from "@components/icons";
 import CardSkill from "./CardSkill.astro";
 import { Angular } from "@components/icons";
 
 const SKILL_DETAIL = [
+  {
+    icon: Net,
+    label: ".NET",
+    color: "rgba(81, 43, 212, 0.12)",
+    borderColor: "rgb(81, 43, 212)",
+  },
+  {
+    logo: "https://cdn.simpleicons.org/odoo/714B67",
+    label: "Odoo",
+    color: "rgba(113, 75, 103, 0.12)",
+    borderColor: "rgb(113, 75, 103)",
+  },
+  {
+    logo: "https://cdn.simpleicons.org/n8n/EA4B71",
+    label: "n8n",
+    color: "rgba(234, 75, 113, 0.12)",
+    borderColor: "rgb(234, 75, 113)",
+  },
+  {
+    logo: "https://cdn.simpleicons.org/anthropic/D97757",
+    label: "Claude Code",
+    color: "rgba(217, 119, 87, 0.12)",
+    borderColor: "rgb(217, 119, 87)",
+  },
   {
     icon: Astroo,
     label: "Astro",
@@ -126,7 +151,7 @@ const SKILL_DETAIL = [
 ---
 
 <section>
-  <Title>Habilidades</Title>
+  <Title>Tecnologías</Title>
   <div
     class="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5"
   >
@@ -137,7 +162,18 @@ const SKILL_DETAIL = [
           label={skill.label}
           borderColor={skill.borderColor}
         >
-          <skill.icon class="size-7" />
+          {
+            skill.logo ? (
+              <img
+                src={skill.logo}
+                alt={`Logo de ${skill.label}`}
+                class="size-7"
+                loading="lazy"
+              />
+            ) : (
+              <skill.icon class="size-7" />
+            )
+          }
         </CardSkill>
       ))
     }

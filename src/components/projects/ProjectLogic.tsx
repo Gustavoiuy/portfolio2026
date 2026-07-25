@@ -1,4 +1,4 @@
-import { Astroo, React, Net, Figma, HTML, JavaScript, PostgreSQL, ReactRouter, Supabase, TailwindCSS, TanStack, TypeScript, Zod, Zustand, Star } from '@components/icons/react'
+import { Astroo, HTML, JavaScript, Net, React, Star, Supabase } from '@components/icons/react'
 import { SkillProject } from '@components/projects/SkillProject'
 import { CardProject } from '@components/projects/CardProject'
 import { useState, useRef } from 'react'
@@ -46,7 +46,7 @@ export const ProjectLogic = () => {
 
   return (
     <>
-      <section className="flex flex-wrap items-center justify-center gap-6 max-w-2xl mx-auto my-5">
+      <section aria-label="Filtrar proyectos por tecnología" className="mx-auto my-6 flex max-w-3xl justify-start gap-3 overflow-x-auto px-4 pb-2 sm:justify-center sm:px-0">
         <Tippy
           singleton={source}
           appendTo={() => document.body}
@@ -89,18 +89,20 @@ export const ProjectLogic = () => {
             </button>
           </div>
         ) : (
-          <section className='relative max-w-[1300px] mx-auto my-10 px-0 md:px-4 group'>
+          <section className='relative mx-auto my-8 max-w-6xl px-4 sm:px-10 md:my-12 md:px-14 group'>
             
             <button 
               onClick={() => swiperRef.current?.slidePrev()}
-              className='absolute left-0 md:-left-4 top-1/2 -translate-y-1/2 z-20 bg-black/50 hover:bg-st border border-white/10 p-3 rounded-full text-white backdrop-blur-sm transition-all opacity-0 group-hover:opacity-100 translate-x-4 group-hover:translate-x-0 cursor-pointer hidden md:block'
+              aria-label='Ver proyecto anterior'
+              className='absolute left-0 top-1/2 z-20 hidden -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/15 bg-slate-950/90 p-3 text-white shadow-lg transition hover:border-cyan-300 hover:bg-slate-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300 md:grid md:place-items-center'
             >
               <ArrowLeft />
             </button>
 
             <button 
               onClick={() => swiperRef.current?.slideNext()}
-              className='absolute right-0 md:-right-4 top-1/2 -translate-y-1/2 z-20 bg-black/50 hover:bg-st border border-white/10 p-3 rounded-full text-white backdrop-blur-sm transition-all opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 cursor-pointer hidden md:block'
+              aria-label='Ver proyecto siguiente'
+              className='absolute right-0 top-1/2 z-20 hidden translate-x-1/2 -translate-y-1/2 rounded-full border border-white/15 bg-slate-950/90 p-3 text-white shadow-lg transition hover:border-cyan-300 hover:bg-slate-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300 md:grid md:place-items-center'
             >
               <ArrowRight />
             </button>
@@ -113,17 +115,15 @@ export const ProjectLogic = () => {
               centeredSlides={true} 
               loop={filteredProjects.length > 2} 
               
-              // --- RESPONSIVE LOGIC AÑADIDA ---
-              spaceBetween={70} // Espacio pequeño por defecto (Móvil)
+              spaceBetween={24}
               breakpoints={{
                 640: {
-                    spaceBetween: 40 // Tablet
+                    spaceBetween: 32
                 },
                 1024: {
-                    spaceBetween: 100 // Desktop (Tu valor original)
+                    spaceBetween: 48
                 }
               }}
-              // -------------------------------
 
               slidesPerView={'auto'}
               grabCursor={true}
@@ -131,18 +131,17 @@ export const ProjectLogic = () => {
                 delay: 4000,
                 pauseOnMouseEnter: true
               }}
-              className="overflow-visible py-10"
+              className="overflow-visible py-4 sm:py-6"
             >
               {filteredProjects.map((project: ProjectProps) => (
-                // AÑADIDO: w-[85vw] para móvil (ocupa el 85% de la pantalla) y tamaños fijos para tablet/desktop
-                <SwiperSlide key={project.title} className="w-[85vw] md:max-w-[420px] transition-all duration-500 ease-out">
+                <SwiperSlide key={project.title} className="w-[calc(100vw-2rem)] max-w-[520px] sm:w-[460px] lg:w-[500px] transition-all duration-500 ease-out">
                   
                   {({ isActive }) => (
                     <div className={`
                       transition-all duration-500 ease-out h-full
                       ${isActive 
                         ? 'scale-100 opacity-100 blur-0 grayscale-0 z-10' 
-                        : 'scale-90 opacity-40 blur-[1px] grayscale hover:opacity-10 hover:grayscale-0 hover:scale-95 cursor-pointer'}
+                        : 'scale-[0.96] opacity-45 grayscale-[0.45] hover:opacity-75 hover:grayscale-0 hover:scale-[0.98] cursor-pointer'}
                     `}>
                       <CardProject {...project} />
                     </div>

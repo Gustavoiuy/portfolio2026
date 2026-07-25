@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import { ClientRouter } from "astro:transitions";
+import WhatsappContact from "@components/ui/WhatsappContact.astro";
 ---
 
 <!doctype html>
@@ -35,6 +36,7 @@ import { ClientRouter } from "astro:transitions";
   </head>
   <body class="max-w-5xl mx-auto p-4 xs:p-6 xl:p-0 overflow-x-hidden">
     <slot />
+    <WhatsappContact />
   </body>
 </html>
 
